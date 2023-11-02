@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego proyecto</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="play">
+        <h2>Bombs ang gifts</h2>
+        <p>Elige tu personaje:</p>
+        <div class="characters"></div>
+        <p>Pulsa el botón para comenzar</p>
+        <button class="first_btn">Jugar</button>
+    </div>
+    <div class="contenedor_juego">
+        <canvas id="juego"></canvas>
+
+        <div class="btns">
+            <button id="up">Arriba</button>
+            <button id="left">Izquierda</button>
+            <button id="rigth">Derecha</button>
+            <button id="down">Abajo</button>
+        </div>
+
+        <div class="info_juego">
+            <p>Vidas: <span id="lives_game"></span></p>
+            <p>Nivel: <span id="level_game"></span></p>
+            <p>Movimientos: <span id="moves"></span></p>
+        </div>
+
+        
+    </div>
+    <script src="./fun/juego.js"></script>
+</body>
+</html>
