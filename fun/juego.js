@@ -8,38 +8,38 @@ const characterSelector = document.querySelector('.characters');
 window.addEventListener('load', empezarJuego);
 
 startBtn.addEventListener('click', setCanvasSize);
-
-
-
-let character = ['🐶', '🐻‍❄️', '🐵', '🐔', '👻', '💀', '👽'];
-
 const emojis = {
     '-': ' ',
     'O': '🚪',
     'X': '💣',
     'I': '🎁',
     'PLAYER': '',
-    'HEART': '❤️'
-};
+    'HEART': '❤️',
+  };
 
-character.forEach((char) => {
-    const selection = document.createElement('div');
-    selection.innerHTML = char;
-    characterSelector.appendChild(selection);
 
-    selection.addEventListener('click', () => {
+function pickCharacter() {
+    const character = ['🐶', '🐻‍❄️', '🐵', '🐔', '👻', '💀', '👽'];
+  
+    character.forEach((char) => {
+      const selection = document.createElement('div');
+      selection.innerHTML = char;
+      characterSelector.appendChild(selection);
+  
+      selection.addEventListener('click', () => {
         const selectedCharacter = document.querySelectorAll('.characters div.selected');
         selectedCharacter.forEach((p) => {
-            p.classList.remove('selected');
+          p.classList.remove('selected');
         });
-
+  
         selection.classList.add('selected');
         emojis.PLAYER = selection.innerHTML;
-        console.log(emojis.PLAYER)
+        console.log(emojis.PLAYER);
+      });
     });
-
-    
-});
+  }
+  
+pickCharacter();
 
 
 
@@ -105,30 +105,7 @@ const maps = [];
     XX-----OXX
     XXXXXXXXXX
     `);
-    maps.push(`
-    XXXXXXXX-X
-    X-----O--X
-    X-XXXXX--X
-    X---XXXXX-
-    X-X-----XX
-    X-X-XXX--X
-    X-XX-XX-X-
-    X--X--I-XX
-    X-XXXXXX-X
-    XXXXXXXX-X
-    `);
-    maps.push(`
-    O-X---XXXX
-    X-X-X-XXXX
-    X-X-X-XXXX
-    X-X-X-XXXX
-    X-X-X-X-XX
-    X-X-X-X---
-    X-X-X-X-X-
-    X-X-X-X-X-
-    X-X-X-X-XI
-    X---X---XX
-    `);
+    
     
     
 
